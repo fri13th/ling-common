@@ -1,5 +1,7 @@
 language: php
 
+sudo: false
+
 php:
   - 5.3
   - 5.4
@@ -8,5 +10,9 @@ php:
   - 7.0
   - 7.1
   - nightly
+
+before_script:
+  - if [ "$deps" == "low" ]; then composer update --prefer-dist --prefer-lowest --prefer-stable; fi
+  - if [ "$deps" != "low" ]; then composer install --prefer-dist; fi
 
 script: composer test
