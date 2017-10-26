@@ -15,10 +15,10 @@ class commonTest extends TestCase
     }
     
     public function testHook() {
-        hook("HOOK_ID", function ($hello, $world) {
+        hook("hook.hook_id", function ($hello, $world) {
             $this->hook_result =  $hello . ", " . $world;
         });
-        hook("HOOK_ID", ["Hello", "world!"]);
+        hook("hook.hook_id", ["Hello", "world!"]);
         $this->assertTrue($this->hook_result == "Hello, world!");
     }
 }

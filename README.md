@@ -1,8 +1,10 @@
 # LING means Legacy Is Not Good
 
-Ling is a minimalistic PHP MVC framework, carefully not to make a legacy issue. Inspired by Wordpress, Laravel and usa-framework.
+Ling is a minimalistic PHP MVC framework, carefully designed not to make a legacy issue. Inspired by Wordpress, Laravel and usa-framework.
 
-One day I noticed that most of deveolper's daily work is not develop.
+One day I noticed that most of developer's daily work is not development. 
+There are too many unnecessary things to do. i.e. maintain previous work.
+
 
 ## Why legacy matters
 
@@ -13,10 +15,10 @@ One day I noticed that most of deveolper's daily work is not develop.
 
 ## How can we achieve legacy-free
 
-1. All parts of framework must be separated and independent modules(Except config).
+1. All parts of framework must be separated and independent modules(Except config and hook).
 1. All future codes must support previous APIs.
 1. If there needs some breaking changes in some module, make another module and migrate to it.
-1. Allow separate modules at the sametime for convenient migration.
+1. Allow separate modules at the sametime for convenient migration, even core module can be migrated and replaced.
 
 ## We need these policy for legacy-free
 
@@ -31,4 +33,16 @@ One day I noticed that most of deveolper's daily work is not develop.
 1. Use code generator for separating environment to actual code.
 1. Complete documents and sample sites.
 
-We don't aim full featured all-in-one framework. If you want all-in-one, I recommend Laravel.
+This framework is consist of 8 parts. 
+
+1. common
+1. router
+1. form
+1. orm (mysql, sqlite3)
+1. view
+1. exception
+1. log
+1. auth
+1. theme
+
+It can cover many web services, but it doesn't aim full-featured all-in-one framework. If you want all-in-one, I recommend Laravel.
